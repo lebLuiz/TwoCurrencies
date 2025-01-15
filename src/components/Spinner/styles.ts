@@ -1,7 +1,7 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 interface StyledSpinnerPropsInterface {
-  size: number;
+	size: number;
 }
 
 const load = keyframes`
@@ -38,17 +38,19 @@ const round = keyframes`
     }
 `;
 
-export const StyledSpinner = styled.div<
-  StyledSpinnerPropsInterface & React.HTMLAttributes<"div">
->`
-  color: ${({ theme }) => theme?.colors?.primary?.main};
-  font-size: ${({ size }) => `${size}px`};
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: ${load} 1.7s infinite ease, ${round} 1.7s infinite ease;
-  animation: ${load} 1.7s infinite ease, ${round} 1.7s infinite ease;
+export const StyledSpinner = styled.div<StyledSpinnerPropsInterface & React.HTMLAttributes<'div'>>`
+	color: ${({ theme }) => theme?.colors?.primary?.main};
+	font-size: ${({ size }) => `${size}px`};
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-animation:
+		${load} 1.7s infinite ease,
+		${round} 1.7s infinite ease;
+	animation:
+		${load} 1.7s infinite ease,
+		${round} 1.7s infinite ease;
 `;
