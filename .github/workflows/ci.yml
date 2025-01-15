@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set locale and timezone
+      run: |
+        sudo apt-get install -y tzdata
+        sudo timedatectl set-timezone America/Sao_Paulo
+
     - name: Checkout code
       uses: actions/checkout@v4
 
