@@ -1,4 +1,4 @@
-import { describe, expect, Mock, test, vi } from 'vitest';
+import { beforeAll, describe, expect, Mock, test, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 
 import QuoteService from '../../services/QuoteService';
@@ -9,6 +9,11 @@ vi.mock('../../services/QuoteService');
 vi.mock('../../utils/toast');
 
 describe('useQuote Hook', () => {
+	beforeAll(() => {
+		vi.useFakeTimers();
+		vi.setSystemTime(new Date('2025-01-15T21:00:00-03:00'));
+	});
+
 	test('should call "getQuote" and update states correctly on success', async () => {
 		(QuoteService.getQuote as Mock).mockResolvedValue(ResGetQuoteMock);
 
