@@ -23,7 +23,7 @@ export default function QuoteForm({ onChangeValue, isLoading }: QuoteFormPropsIn
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const rawValue = event.target.value;
-		const formattedValue = formatValue(rawValue);
+		const formattedValue = formatVlue(rawValue);
 
 		setValue(formattedValue);
 		onChangeValue(formattedValue);
