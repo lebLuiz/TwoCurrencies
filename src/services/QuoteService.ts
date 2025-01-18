@@ -5,7 +5,7 @@ import ResGetQuoteInterface from './utils/contracts/QuoteService/res/ResGetQuote
 class QuoteService {
 	httpClient: HttpClient;
 	constructor() {
-		this.httpClient = new HttpClient(`https://api.currencybeacon.com/v1`);
+		this.httpClient = new HttpClient(import.meta.env.VITE_REACT_APP_API_URL);
 	}
 
 	async getQuote(data?: ReqParamsGetQuoteInterface): Promise<ResGetQuoteInterface> {
